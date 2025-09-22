@@ -9,11 +9,13 @@ import threading
 import urllib.parse
 from datetime import datetime, timedelta
 from io import BytesIO
+from json import JSONDecodeError
 
 import requests
 from PIL import Image
 
 from odoo import _, exceptions
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -172,10 +174,10 @@ class PostlogisticsWebService(object):
         if not partner_name:
             raise exceptions.UserError(_("Customer name is required."))
         customer = {
-            "name1": self._sanitize_string(partner_name)[:35],
-            "street": self._sanitize_string(partner.street)[:35],
+            "name1": self._sanitize_string(partner_name)[:25],
+            "street": self._sanitize_string(partner.street)[:25],
             "zip": self._sanitize_string(partner.zip)[:10],
-            "city": self._sanitize_string(partner.city)[:35],
+            "city": self._sanitize_string(partner.city)[:25],
             "country": partner.country_id.code,
             "domicilePostOffice": picking.carrier_id.postlogistics_office or None,
         }
@@ -450,7 +452,22 @@ class PostlogisticsWebService(object):
             },
             timeout=60,
         )
-        return response.json()
+
+        try:
+            response.raise_for_status()
+            json_response = response.json()
+        except (
+            JSONDecodeError,
+            requests.exceptions.HTTPError,
+        ) as error:
+            raise UserError(
+                _(
+                    "Postlogistics service is not accessible at the moment. Error code: %s. "
+                    "Please try again later." % (response.status_code or "None")
+                )
+            ) from error
+
+        return json_response
 
     @classmethod
     def get_access_token(cls, picking_carrier):
@@ -482,9 +499,9 @@ class PostlogisticsWebService(object):
 
     def _sanitize_string(self, value):
         """Removes disallowed chars ("|", "\", "<", ">", "’", "‘") from strings."""
-        if isinstance(value, str):
-            for char, repl in DISALLOWED_CHARS_MAPPING.items():
-                value = value.replace(char, repl)
+        value = value or ""
+        for char, repl in DISALLOWED_CHARS_MAPPING.items():
+            value = value.replace(char, repl)
         return value
 
     def generate_label(self, picking, packages):

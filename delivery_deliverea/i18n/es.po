@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-07 14:38+0000\n"
-"PO-Revision-Date: 2024-01-31 11:54+0000\n"
-"Last-Translator: Nacho Morales <ignacio.morales@factorlibre.com>\n"
+"PO-Revision-Date: 2025-03-28 04:06+0000\n"
+"Last-Translator: kikopeiro <francisco.peiro@factorlibre.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #. module: delivery_deliverea
 #. odoo-python
@@ -177,7 +177,7 @@ msgstr "Servicios del transportista"
 #. module: delivery_deliverea
 #: model_terms:ir.ui.view,arch_db:delivery_deliverea.view_delivery_carrier_form
 msgid "Deliverea Configuration"
-msgstr "Configuración deliverea"
+msgstr "Configuración Deliverea"
 
 #. module: delivery_deliverea
 #: model:ir.actions.act_window,name:delivery_deliverea.delivery_deliverea_distribution_center_action
@@ -200,6 +200,19 @@ msgstr "Error de Deliverea"
 #, python-format
 msgid "Deliverea Error. Uncontrolled error, it is necessary to check the log"
 msgstr "Error de Deliverea. Error no controlado, es necesario comprobar el log"
+
+#. module: delivery_deliverea
+#. odoo-python
+#: code:addons/delivery_deliverea/models/delivery_carrier.py:0
+#, python-format
+msgid ""
+"Deliverea Error:\n"
+"\n"
+"%s"
+msgstr ""
+"Error de Deliverea:\n"
+"\n"
+"%s"
 
 #. module: delivery_deliverea
 #: model:ir.model.fields,field_description:delivery_deliverea.field_carrier_deliverea_service__deliverea_parameters
@@ -421,6 +434,13 @@ msgstr "Telefono"
 #: model:ir.model.fields,field_description:delivery_deliverea.field_delivery_carrier__delivery_type
 msgid "Provider"
 msgstr "Proveedor"
+
+#. module: delivery_deliverea
+#. odoo-python
+#: code:addons/delivery_deliverea/models/delivery_carrier.py:0
+#, python-format
+msgid "References missing in response.\n"
+msgstr "Faltan referencias en la respuesta.\n"
 
 #. module: delivery_deliverea
 #: model:ir.model.fields.selection,name:delivery_deliverea.selection__carrier_deliverea_parameter__type__required

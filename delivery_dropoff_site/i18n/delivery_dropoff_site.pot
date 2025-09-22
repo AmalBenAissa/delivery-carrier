@@ -172,6 +172,7 @@ msgstr ""
 
 #. module: delivery_dropoff_site
 #: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__is_company
+#: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__parent_is_company
 msgid "Check if the contact is a company, otherwise it is a person"
 msgstr ""
 
@@ -590,6 +591,11 @@ msgid "Invoices"
 msgstr ""
 
 #. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__is_coa_installed
+msgid "Is Coa Installed"
+msgstr ""
+
+#. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__is_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_res_partner__is_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_res_users__is_dropoff_site
@@ -707,6 +713,11 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__nic
+msgid "NIC"
+msgstr ""
+
+#. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__name
 #: model_terms:ir.ui.view,arch_db:delivery_dropoff_site.view_partner_dropoff_site_form
 msgid "Name"
@@ -776,6 +787,11 @@ msgid ""
 msgstr ""
 
 #. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__parent_is_company
+msgid "Parent is a Company"
+msgstr ""
+
+#. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__parent_name
 msgid "Parent name"
 msgstr ""
@@ -803,6 +819,11 @@ msgstr ""
 #. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__same_company_registry_partner_id
 msgid "Partner with same Company Registry"
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__same_siren_partner_id
+msgid "Partner with same SIREN"
 msgstr ""
 
 #. module: delivery_dropoff_site
@@ -841,13 +862,13 @@ msgid "Purchase Lines"
 msgstr ""
 
 #. module: delivery_dropoff_site
-#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__purchase_warn
-msgid "Purchase Order"
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__purchase_order_count
+msgid "Purchase Order Count"
 msgstr ""
 
 #. module: delivery_dropoff_site
-#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__purchase_order_count
-msgid "Purchase Order Count"
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__purchase_warn
+msgid "Purchase Order Warning"
 msgstr ""
 
 #. module: delivery_dropoff_site
@@ -868,6 +889,16 @@ msgstr ""
 #. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__activity_user_id
 msgid "Responsible User"
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__siren
+msgid "SIREN"
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__siret
+msgid "SIRET"
 msgstr ""
 
 #. module: delivery_dropoff_site
@@ -915,6 +946,11 @@ msgstr ""
 #. module: delivery_dropoff_site
 #: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__self
 msgid "Self"
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__use_partner_credit_limit
+msgid "Set a value greater than 0.0 to activate a credit limit check"
 msgstr ""
 
 #. module: delivery_dropoff_site
@@ -1028,10 +1064,37 @@ msgid "Tax ID"
 msgstr ""
 
 #. module: delivery_dropoff_site
+#: model:ir.model.fields,field_description:delivery_dropoff_site.field_dropoff_site__vies_failed_message
+msgid "Technical field display a message to the user if the VIES check fails."
+msgstr ""
+
+#. module: delivery_dropoff_site
 #: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__country_code
 msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__nic
+msgid ""
+"The NIC number is the official rank number of this office in the company in "
+"France. It composes the last 5 digits of the SIRET number."
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__siren
+msgid ""
+"The SIREN number is the official identity number of the company in France. "
+"It composes the first 9 digits of the SIRET number."
+msgstr ""
+
+#. module: delivery_dropoff_site
+#: model:ir.model.fields,help:delivery_dropoff_site.field_dropoff_site__siret
+msgid ""
+"The SIRET number is the official identity number of this company's office in"
+" France. It is composed of the 9 digits of the SIREN number and the 5 digits"
+" of the NIC number, ie. 14 digits."
 msgstr ""
 
 #. module: delivery_dropoff_site
